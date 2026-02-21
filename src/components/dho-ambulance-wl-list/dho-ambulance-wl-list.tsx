@@ -1,11 +1,11 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'cv1-ambulance-wl-list',
-  styleUrl: 'cv1-ambulance-wl-list.css',
+  tag: 'dho-ambulance-wl-list',
+  styleUrl: 'dho-ambulance-wl-list.css',
   shadow: true,
 })
-export class Cv1AmbulanceWlList {
+export class DhoAmbulanceWlList {
   waitingPatients: any[];
 
   private async getWaitingPatientsAsync() {

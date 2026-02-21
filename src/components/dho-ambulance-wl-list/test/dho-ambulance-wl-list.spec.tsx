@@ -1,13 +1,13 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { Cv1AmbulanceWlList } from '../cv1-ambulance-wl-list';
+import { DhoAmbulanceWlList } from '../dho-ambulance-wl-list';
 
-describe('cv1-ambulance-wl-list', () => {
+describe('dho-ambulance-wl-list', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [Cv1AmbulanceWlList],
-      html: `<cv1-ambulance-wl-list></cv1-ambulance-wl-list>`,
+      components: [DhoAmbulanceWlList],
+      html: `<dho-ambulance-wl-list></dho-ambulance-wl-list>`,
     });
-    const wlList = page.rootInstance as Cv1AmbulanceWlList;
+    const wlList = page.rootInstance as DhoAmbulanceWlList;
     const expectedPatients = wlList?.waitingPatients?.length;
 
     const items = page.root.shadowRoot.querySelectorAll('md-list-item');

@@ -6,32 +6,32 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface Cv1AmbulanceWlList {
+    interface DhoAmbulanceWlList {
     }
 }
 declare global {
-    interface HTMLCv1AmbulanceWlListElement extends Components.Cv1AmbulanceWlList, HTMLStencilElement {
+    interface HTMLDhoAmbulanceWlListElement extends Components.DhoAmbulanceWlList, HTMLStencilElement {
     }
-    var HTMLCv1AmbulanceWlListElement: {
-        prototype: HTMLCv1AmbulanceWlListElement;
-        new (): HTMLCv1AmbulanceWlListElement;
+    var HTMLDhoAmbulanceWlListElement: {
+        prototype: HTMLDhoAmbulanceWlListElement;
+        new (): HTMLDhoAmbulanceWlListElement;
     };
     interface HTMLElementTagNameMap {
-        "cv1-ambulance-wl-list": HTMLCv1AmbulanceWlListElement;
+        "dho-ambulance-wl-list": HTMLDhoAmbulanceWlListElement;
     }
 }
 declare namespace LocalJSX {
-    interface Cv1AmbulanceWlList {
+    interface DhoAmbulanceWlList {
     }
     interface IntrinsicElements {
-        "cv1-ambulance-wl-list": Cv1AmbulanceWlList;
+        "dho-ambulance-wl-list": DhoAmbulanceWlList;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "cv1-ambulance-wl-list": LocalJSX.IntrinsicElements["cv1-ambulance-wl-list"] & JSXBase.HTMLAttributes<HTMLCv1AmbulanceWlListElement>;
+            "dho-ambulance-wl-list": LocalJSX.IntrinsicElements["dho-ambulance-wl-list"] & JSXBase.HTMLAttributes<HTMLDhoAmbulanceWlListElement>;
         }
     }
 }
