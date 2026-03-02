@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { DhoAmbulanceWlEditor } from '../dho-ambulance-wl-editor';
 
-describe('dho-ambulance-wl-editor', () => {
-  it('renders', async () => {
+describe('Dho-ambulance-wl-editor', () => {
+  it('buttons shall be of different type', async () => {
     const page = await newSpecPage({
       components: [DhoAmbulanceWlEditor],
-      html: `<dho-ambulance-wl-editor></dho-ambulance-wl-editor>`,
+      html: `<dho-ambulance-wl-editor entry-id="@new"></dho-ambulance-wl-editor>`,
     });
-    expect(page.root).toEqualHtml(`
-      <dho-ambulance-wl-editor>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </dho-ambulance-wl-editor>
-    `);
+    let items: any = await page.root.shadowRoot.querySelectorAll('md-filled-button');
+    expect(items.length).toEqual(1);
+    items = await page.root.shadowRoot.querySelectorAll('md-outlined-button');
+    expect(items.length).toEqual(1);
+
+    items = await page.root.shadowRoot.querySelectorAll('md-filled-tonal-button');
+    expect(items.length).toEqual(1);
   });
 });
