@@ -6,10 +6,34 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface DhoAmbulanceWlEditor {
+        "entryId": string;
+    }
     interface DhoAmbulanceWlList {
     }
 }
+export interface DhoAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLDhoAmbulanceWlEditorElement;
+}
 declare global {
+    interface HTMLDhoAmbulanceWlEditorElementEventMap {
+        "editor-closed": string;
+    }
+    interface HTMLDhoAmbulanceWlEditorElement extends Components.DhoAmbulanceWlEditor, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLDhoAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLDhoAmbulanceWlEditorElement, ev: DhoAmbulanceWlEditorCustomEvent<HTMLDhoAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLDhoAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLDhoAmbulanceWlEditorElement, ev: DhoAmbulanceWlEditorCustomEvent<HTMLDhoAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLDhoAmbulanceWlEditorElement: {
+        prototype: HTMLDhoAmbulanceWlEditorElement;
+        new (): HTMLDhoAmbulanceWlEditorElement;
+    };
     interface HTMLDhoAmbulanceWlListElement extends Components.DhoAmbulanceWlList, HTMLStencilElement {
     }
     var HTMLDhoAmbulanceWlListElement: {
@@ -17,13 +41,24 @@ declare global {
         new (): HTMLDhoAmbulanceWlListElement;
     };
     interface HTMLElementTagNameMap {
+        "dho-ambulance-wl-editor": HTMLDhoAmbulanceWlEditorElement;
         "dho-ambulance-wl-list": HTMLDhoAmbulanceWlListElement;
     }
 }
 declare namespace LocalJSX {
+    interface DhoAmbulanceWlEditor {
+        "entryId"?: string;
+        "onEditor-closed"?: (event: DhoAmbulanceWlEditorCustomEvent<string>) => void;
+    }
     interface DhoAmbulanceWlList {
     }
+
+    interface DhoAmbulanceWlEditorAttributes {
+        "entryId": string;
+    }
+
     interface IntrinsicElements {
+        "dho-ambulance-wl-editor": Omit<DhoAmbulanceWlEditor, keyof DhoAmbulanceWlEditorAttributes> & { [K in keyof DhoAmbulanceWlEditor & keyof DhoAmbulanceWlEditorAttributes]?: DhoAmbulanceWlEditor[K] } & { [K in keyof DhoAmbulanceWlEditor & keyof DhoAmbulanceWlEditorAttributes as `attr:${K}`]?: DhoAmbulanceWlEditorAttributes[K] } & { [K in keyof DhoAmbulanceWlEditor & keyof DhoAmbulanceWlEditorAttributes as `prop:${K}`]?: DhoAmbulanceWlEditor[K] };
         "dho-ambulance-wl-list": DhoAmbulanceWlList;
     }
 }
@@ -31,6 +66,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "dho-ambulance-wl-editor": LocalJSX.IntrinsicElements["dho-ambulance-wl-editor"] & JSXBase.HTMLAttributes<HTMLDhoAmbulanceWlEditorElement>;
             "dho-ambulance-wl-list": LocalJSX.IntrinsicElements["dho-ambulance-wl-list"] & JSXBase.HTMLAttributes<HTMLDhoAmbulanceWlListElement>;
         }
     }
