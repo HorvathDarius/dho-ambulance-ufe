@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface DhoAmbulanceWlApp {
+        "ambulanceId": string;
+        "apiBase": string;
         /**
           * @default ''
          */
@@ -16,6 +18,8 @@ export namespace Components {
         "entryId": string;
     }
     interface DhoAmbulanceWlList {
+        "ambulanceId": string;
+        "apiBase": string;
     }
 }
 export interface DhoAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
@@ -75,6 +79,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface DhoAmbulanceWlApp {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         /**
           * @default ''
          */
@@ -85,20 +91,28 @@ declare namespace LocalJSX {
         "onEditor-closed"?: (event: DhoAmbulanceWlEditorCustomEvent<string>) => void;
     }
     interface DhoAmbulanceWlList {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         "onEntry-clicked"?: (event: DhoAmbulanceWlListCustomEvent<string>) => void;
     }
 
     interface DhoAmbulanceWlAppAttributes {
         "basePath": string;
+        "apiBase": string;
+        "ambulanceId": string;
     }
     interface DhoAmbulanceWlEditorAttributes {
         "entryId": string;
+    }
+    interface DhoAmbulanceWlListAttributes {
+        "apiBase": string;
+        "ambulanceId": string;
     }
 
     interface IntrinsicElements {
         "dho-ambulance-wl-app": Omit<DhoAmbulanceWlApp, keyof DhoAmbulanceWlAppAttributes> & { [K in keyof DhoAmbulanceWlApp & keyof DhoAmbulanceWlAppAttributes]?: DhoAmbulanceWlApp[K] } & { [K in keyof DhoAmbulanceWlApp & keyof DhoAmbulanceWlAppAttributes as `attr:${K}`]?: DhoAmbulanceWlAppAttributes[K] } & { [K in keyof DhoAmbulanceWlApp & keyof DhoAmbulanceWlAppAttributes as `prop:${K}`]?: DhoAmbulanceWlApp[K] };
         "dho-ambulance-wl-editor": Omit<DhoAmbulanceWlEditor, keyof DhoAmbulanceWlEditorAttributes> & { [K in keyof DhoAmbulanceWlEditor & keyof DhoAmbulanceWlEditorAttributes]?: DhoAmbulanceWlEditor[K] } & { [K in keyof DhoAmbulanceWlEditor & keyof DhoAmbulanceWlEditorAttributes as `attr:${K}`]?: DhoAmbulanceWlEditorAttributes[K] } & { [K in keyof DhoAmbulanceWlEditor & keyof DhoAmbulanceWlEditorAttributes as `prop:${K}`]?: DhoAmbulanceWlEditor[K] };
-        "dho-ambulance-wl-list": DhoAmbulanceWlList;
+        "dho-ambulance-wl-list": Omit<DhoAmbulanceWlList, keyof DhoAmbulanceWlListAttributes> & { [K in keyof DhoAmbulanceWlList & keyof DhoAmbulanceWlListAttributes]?: DhoAmbulanceWlList[K] } & { [K in keyof DhoAmbulanceWlList & keyof DhoAmbulanceWlListAttributes as `attr:${K}`]?: DhoAmbulanceWlListAttributes[K] } & { [K in keyof DhoAmbulanceWlList & keyof DhoAmbulanceWlListAttributes as `prop:${K}`]?: DhoAmbulanceWlList[K] };
     }
 }
 export { LocalJSX as JSX };
