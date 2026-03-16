@@ -50,7 +50,7 @@ export class DhoAmbulanceWlApp {
     return (
       <Host>
         {element === 'editor' ? (
-          <dho-ambulance-wl-editor entry-id={entryId} oneditor-closed={() => navigate('./list')}></dho-ambulance-wl-editor>
+          <dho-ambulance-wl-editor ambulance-id={this.ambulanceId} api-base={this.apiBase} entry-id={entryId} oneditor-closed={() => navigate('./list')}></dho-ambulance-wl-editor>
         ) : (
           <dho-ambulance-wl-list
             ambulance-id={this.ambulanceId}
