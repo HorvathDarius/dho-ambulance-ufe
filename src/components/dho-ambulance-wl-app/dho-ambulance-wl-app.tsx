@@ -34,6 +34,8 @@ export class DhoAmbulanceWlApp {
   }
 
   render() {
+    console.debug('dho-ambulance-wl-app.render() - path: %s', this.relativePath);
+
     let element = 'list';
     let entryId = '@new';
 
